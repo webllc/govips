@@ -1,12 +1,12 @@
 all: deps build test
 
 deps: FORCE
-	CGO_CFLAGS_ALLOW=-Xpreprocessor go get ./...
+	CGO_ENABLED=0 go get ./...
 
 build: FORCE
-	CGO_CFLAGS_ALLOW=-Xpreprocessor go build ./vips
+	CGO_ENABLED=0 go build ./vips
 
 test: FORCE
-	CGO_CFLAGS_ALLOW=-Xpreprocessor go test -v ./...
+	CGO_ENABLED=0 go test -v ./...
 
 FORCE:
